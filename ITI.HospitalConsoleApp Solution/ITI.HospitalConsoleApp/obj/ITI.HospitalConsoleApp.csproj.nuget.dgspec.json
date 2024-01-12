@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\ITI.HospitalConsoleApp.csproj": {}
+    "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\ITI.HospitalConsoleApp.csproj": {}
   },
   "projects": {
-    "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\ITI.HospitalConsoleApp.csproj": {
+    "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\ITI.HospitalConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\ITI.HospitalConsoleApp.csproj",
+        "projectUniqueName": "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\ITI.HospitalConsoleApp.csproj",
         "projectName": "ITI.HospitalConsoleApp",
-        "projectPath": "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\ITI.HospitalConsoleApp.csproj",
+        "projectPath": "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\ITI.HospitalConsoleApp.csproj",
         "packagesPath": "C:\\Users\\mosta\\.nuget\\packages\\",
-        "outputPath": "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\obj\\",
+        "outputPath": "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mosta\\AppData\\Roaming\\NuGet\\NuGet.Config",

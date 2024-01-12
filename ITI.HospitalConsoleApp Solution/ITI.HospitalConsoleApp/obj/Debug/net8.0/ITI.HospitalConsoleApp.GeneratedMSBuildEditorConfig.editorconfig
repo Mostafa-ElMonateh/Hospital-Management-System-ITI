@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ITI.HospitalConsoleApp
-build_property.ProjectDir = D:\ITI.Qena\Projects\Hospital-Management-System-ITI\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\
+build_property.ProjectDir = D:\ITI.Qena\Projects\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

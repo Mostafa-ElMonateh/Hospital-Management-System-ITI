@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XhfXviSwO0MG3SRij5bBW4zyJ9MZgNkniuWx7/bpecgSZaR3wbLgRIRvPTrXnBK66uoFNYpB0obd4mnqk++pjQ==",
+  "dgSpecHash": "nF8drYKZfAFbHg82B0ExVyMtzlkoSZlYuqIVxlZwM96LBjDa+8tAbu14M/17924BYtn6bpre2gEK7/0Xtv5SBw==",
   "success": true,
-  "projectFilePath": "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\ITI.HospitalConsoleApp.csproj",
+  "projectFilePath": "D:\\ITI.Qena\\Projects\\Hospital-Management-System-ITI\\ITI.HospitalConsoleApp Solution\\ITI.HospitalConsoleApp\\ITI.HospitalConsoleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mosta\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\mosta\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

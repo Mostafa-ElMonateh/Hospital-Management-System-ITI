@@ -36,3 +36,11 @@ D:\ITI.Qena\Projects\Hospital-Management-System-ITI\Hospital-Management-System-I
 D:\ITI.Qena\Projects\Hospital-Management-System-ITI\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\obj\Debug\net8.0\ITI.HospitalConsoleApp.pdb
 D:\ITI.Qena\Projects\Hospital-Management-System-ITI\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\obj\Debug\net8.0\ITI.HospitalConsoleApp.genruntimeconfig.cache
 D:\ITI.Qena\Projects\Hospital-Management-System-ITI\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\obj\Debug\net8.0\ref\ITI.HospitalConsoleApp.dll
+D:\ITI.Qena\Projects\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\bin\Debug\net8.0\System.Data.SqlClient.dll
+D:\ITI.Qena\Projects\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+D:\ITI.Qena\Projects\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+D:\ITI.Qena\Projects\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+D:\ITI.Qena\Projects\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\ITI.Qena\Projects\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\ITI.Qena\Projects\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\obj\Debug\net8.0\ITI.HospitalConsoleApp.csproj.AssemblyReference.cache
+D:\ITI.Qena\Projects\Hospital-Management-System-ITI\ITI.HospitalConsoleApp Solution\ITI.HospitalConsoleApp\obj\Debug\net8.0\ITI.HospitalConsoleApp.csproj.CopyComplete
