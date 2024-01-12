@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace ITI.HospitalConsoleApp
 {
@@ -18,8 +19,7 @@ namespace ITI.HospitalConsoleApp
         #endregion
 
         #region Methods
-        public override void Create() { }
-        public override void Read() { }
+        public override void Create(SqlConnection connection, BaseClass Entity) { }
         public override void Update(SqlConnection connection) {
             int Id = Helper.AskUserForNumber(UserInputEnum.Id);
             string Name = Helper.AskUserForString(UserInputEnum.Name);
@@ -30,12 +30,16 @@ namespace ITI.HospitalConsoleApp
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
-                Console.WriteLine($"Record with ID {Id} updated successfully.");
+                Console.WriteLine($"Record with identifier {Id} updated successfully.");
             else
-                Console.WriteLine($"Record with ID {Id} not found.");
+                Console.WriteLine($"Record with identifier {Id} not found.");
         }
         
-        public override void Search() { } 
+
+        public override string ToString()
+        {
+            return $"Patients";
+        }
         #endregion
     }
 }

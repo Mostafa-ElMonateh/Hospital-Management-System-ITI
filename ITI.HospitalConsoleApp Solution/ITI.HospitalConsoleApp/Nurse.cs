@@ -22,8 +22,7 @@ namespace ITI.HospitalConsoleApp
         #endregion
 
         #region Methods
-        public override void Create() { }
-        public override void Read() { }
+        public override void Create(SqlConnection connection, BaseClass entity) { }
         public override void Update(SqlConnection connection)
         {
             int Id = Helper.AskUserForNumber(UserInputEnum.Id);
@@ -39,7 +38,11 @@ namespace ITI.HospitalConsoleApp
             else
                 Console.WriteLine($"Record with ID {Id} not found.");
         }
-        public override void Search() { }
+
+        public override string ToString()
+        {
+            return $"Nurses";
+        }
         #endregion
     }
 }

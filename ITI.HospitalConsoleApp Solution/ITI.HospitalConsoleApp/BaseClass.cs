@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Security;
@@ -11,12 +12,10 @@ namespace ITI.HospitalConsoleApp
     abstract class BaseClass
     {
         #region Fields
-        private int id;
         private string name;
         #endregion
 
         #region Properties
-        public int Id{get => id;}
         public string Name
         {
             get => name;
@@ -25,25 +24,64 @@ namespace ITI.HospitalConsoleApp
         #endregion
 
         #region Methods
-        public virtual void Create() { }
-        public virtual void Read() { }
-        public virtual void Search() { }
+        public virtual void Create(SqlConnection connection, BaseClass entity) { }
+        public void Search(SqlConnection connection, BaseClass entity)
+        {
+            Console.WriteLine("Sara Search by name ..");
+            Console.Write("Enter the name : ");
+            string input = Console.ReadLine();
+
+            string nameColumn = entity.ToString() == "Drugs" ? "Brand" : "Name";
+
+            string sqlQuery = $"select * from {entity.ToString()} where {nameColumn} = '{input}'";
+
+            DataTable dataTable = new DataTable();
+
+            using (SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connection))
+            {
+                adapter.Fill(dataTable);
+            }
+
+            Helper.PrintDataTable(dataTable);
+
+
+        }
         public virtual void Update(SqlConnection connection) { }
 
 
-        public void Delete(SqlConnection connection, EntitiesEnum entitiesEnum)
+        public void Delete(SqlConnection connection, BaseClass entity)
         {
+            string sara = (entity.ToString() == "Drugs") ? "Code" : "Id";
 
-            int Id = Helper.AskUserForNumber(UserInputEnum.Id);
+            int Id = sara == "Code" ? Helper.AskUserForNumber(UserInputEnum.Code) : Helper.AskUserForNumber(UserInputEnum.Id);
 
-            SqlCommand command = new SqlCommand($"delete from {entitiesEnum.ToString()} where Id = {Id}", connection);
+
+            SqlCommand command = new SqlCommand($"delete from {entity.ToString()} where { sara } = {Id}", connection);
 
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
-                Console.WriteLine($"Record with ID {Id} deleted successfully.");
+                Console.WriteLine($"Record with identifier {Id} deleted successfully.");
             else
-                Console.WriteLine($"Record with ID {Id} not found.");
+                Console.WriteLine($"Record with identifier {Id} not found.");
+
+        }
+
+        public void Read(SqlConnection connection, BaseClass entity)
+        {
+            Console.WriteLine();
+
+            string sqlQuery = $"select * from {entity.ToString()}";
+
+            DataTable dataTable = new DataTable();
+
+            using (SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, connection))
+            {
+                adapter.Fill(dataTable);
+            }
+
+            Helper.PrintDataTable(dataTable);
+
 
         }
 

@@ -1,11 +1,16 @@
-﻿using System.Data.SqlClient;
+﻿using ITI.HospitalConsoleApp;
+using System.Data.SqlClient;
 
 namespace ITI.HospitalConsoleApp
 {
     internal class Program
     {
+        
         static void Main()
         {
+
+            // Print Welcome To Your Hospital Message
+            Helper.PrintShapeStart();
 
             string connectionString = "Data Source=.;Initial Catalog=Hospital; Trusted_Connection=True";
             SqlConnection connection = new SqlConnection(connectionString);
@@ -13,11 +18,12 @@ namespace ITI.HospitalConsoleApp
             {
                 connection.Open();
 
-                Patient patient = new Patient();
-                Consultant consultant = new Consultant();
-                Nurse nurse = new Nurse();
-                Drug drug = new Drug();
-                drug.Update(connection);
+                // Ask for UserName && Password
+                Helper.GetAccess();
+
+                // User makes operations due to its choices
+                Helper.OperationAsk(connection);
+
             }
             catch (Exception ex)
             {
