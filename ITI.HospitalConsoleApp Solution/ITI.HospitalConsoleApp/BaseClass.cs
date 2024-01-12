@@ -16,11 +16,7 @@ namespace ITI.HospitalConsoleApp
         #endregion
 
         #region Properties
-        public int Id
-        {
-            get => id;
-            set => id = value;
-        }
+        public int Id{get => id;}
         public string Name
         {
             get => name;
