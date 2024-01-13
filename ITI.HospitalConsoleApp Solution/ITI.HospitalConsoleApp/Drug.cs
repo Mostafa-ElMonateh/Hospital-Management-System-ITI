@@ -18,9 +18,9 @@ namespace ITI.HospitalConsoleApp
         #endregion
 
         #region Methods
-        public override void Create(SqlConnection connection, BaseClass entity) { }
         public override void Update(SqlConnection connection)
         {
+            // update a record data of Drug entity in the database
             int Code = Helper.AskUserForNumber(UserInputEnum.Code);
             string Brand = Helper.AskUserForString(UserInputEnum.Brand);
             int Dose = Helper.AskUserForNumber(UserInputEnum.Dose);

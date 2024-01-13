@@ -13,9 +13,10 @@ namespace ITI.HospitalConsoleApp
     static class Helper
     {
 
-        // Print Hello Message Shape
+        #region Start Interface of the app
         public static void PrintShapeStart()
         {
+            // Print Hello Message Shape
             Console.WriteLine(new string('*', Console.WindowWidth));
             string print = "\n\t\t\t\t\t^ _ ^ Welcome to Your hospital ^ _ ^";
             Console.WriteLine(print.PadLeft(Console.WindowWidth / 2));
@@ -23,9 +24,9 @@ namespace ITI.HospitalConsoleApp
             Console.WriteLine(new string('*', Console.WindowWidth));
         }
 
-        // Access Method
         public static void GetAccess()
         {
+            // Access Method
             bool is_enterded = false, flag;
             do
             {
@@ -43,11 +44,13 @@ namespace ITI.HospitalConsoleApp
                     is_enterded = true;
                 }
             } while (!is_enterded);
-        }
+        } 
+        #endregion
 
+        #region Handle the user options
         public static int AskUserForNumber(UserInputEnum userInputEnum)
         {
-
+            // Ask user to Enter name of columns depending on its choice.
             string PrintMessage = "";
             string PrintErrorMessage = "";
 
@@ -83,7 +86,7 @@ namespace ITI.HospitalConsoleApp
 
         public static string AskUserForString(UserInputEnum userInputEnum)
         {
-
+            // Ask user to Enter name of columns depending on its choice.
             string PrintMessage = "";
             string PrintErrorMessage = "";
 
@@ -116,7 +119,7 @@ namespace ITI.HospitalConsoleApp
             }
             return UserInput;
         }
-        
+
         // List Options
         public static void AskForTableForOperation(OperationsEnum OperationName)
         {
@@ -127,14 +130,18 @@ namespace ITI.HospitalConsoleApp
             Console.WriteLine($" 4) {OperationName.ToString()} drug");
             Console.WriteLine($" 5) Back to the menu..");
         }
+        #endregion
+
+        #region Excute Operations
 
         public static void ExecuteCruds(OperationsEnum operationName, SqlConnection connection)
         {
+            // takes an operation from the user and excute it
             AskForTableForOperation(operationName);
             Console.WriteLine();
             Console.Write("Enter an Option: ");
             if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
-                testSara(operationName, input, connection);
+                ChooseCrud(operationName, input, connection);
             else
                 Console.WriteLine("\nEnter a VALID option 👎\n");
             OperationAsk(connection);
@@ -144,6 +151,8 @@ namespace ITI.HospitalConsoleApp
         // Operations List
         public static void OperationAsk(SqlConnection connection)
         {
+            // ask the user for crud
+
             Console.WriteLine($"\n 1) To Add ( Patients - nurses - consultant - drug )");
             Console.WriteLine($" 2) To Read ( Patients - nurses - consultant - drug )");
             Console.WriteLine($" 3) To Update ( Patients - nurses - consultant - drug )");
@@ -160,8 +169,7 @@ namespace ITI.HospitalConsoleApp
             {
                 case 1:
                     {
-                        // Nada Will Complete this Code..
-                        Console.WriteLine("This Is Nada Code..");
+                        ExecuteCruds(OperationsEnum.Add, connection);
                     }
                     break;
                 case 2:
@@ -195,11 +203,11 @@ namespace ITI.HospitalConsoleApp
 
         }
 
-
-        public static void testSara(OperationsEnum opera, int option, SqlConnection connection)
+        public static void ChooseCrud(OperationsEnum opera, int option, SqlConnection connection)
         {
+            // excute a crud depends on the user choice
             BaseClass sara = ReturnObj(option);
-            if(sara is null)
+            if (sara is null)
                 OperationAsk(connection);
             else if (OperationsEnum.Update == opera)
                 sara.Update(connection);
@@ -208,7 +216,7 @@ namespace ITI.HospitalConsoleApp
             else if (OperationsEnum.Search == opera)
                 sara.Search(connection, sara);
             else if (OperationsEnum.Add == opera)
-                sara.Create(connection, sara);
+                sara.Add(connection, sara);
             else if (OperationsEnum.Read == opera)
                 sara.Read(connection, sara);
             else
@@ -218,6 +226,7 @@ namespace ITI.HospitalConsoleApp
 
         public static BaseClass ReturnObj(int option)
         {
+            // return object of entity depends on the user choice
             if (option == 1)
                 return new Patient();
             else if (option == 2)
@@ -228,7 +237,6 @@ namespace ITI.HospitalConsoleApp
                 return new Drug();
             return null;
         }
-
 
         public static void PrintDataTable(DataTable dataTable)
         {
@@ -250,8 +258,7 @@ namespace ITI.HospitalConsoleApp
             }
         }
 
-
-
+        #endregion
 
 
     }

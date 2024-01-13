@@ -9,6 +9,7 @@ namespace ITI.HospitalConsoleApp
 {
     public enum OperationsEnum
     {
+        // Enum refer to CRUDS on entites in the Database
         Add, Update, Read, Delete, Search
     }
 }

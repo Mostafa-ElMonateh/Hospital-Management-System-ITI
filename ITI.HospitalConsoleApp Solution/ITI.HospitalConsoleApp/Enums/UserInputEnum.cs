@@ -8,6 +8,7 @@ namespace ITI.HospitalConsoleApp
 {
     public enum UserInputEnum
     {
-        Id,Code,Dose,Age,Name,Department,Brand
+        // Enum refer to properties of entites in the Database
+        Id, Code,Dose,Age,Name,Department,Brand
     }
 }

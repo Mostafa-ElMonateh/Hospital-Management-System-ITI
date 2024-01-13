@@ -22,9 +22,9 @@ namespace ITI.HospitalConsoleApp
         #endregion
 
         #region Methods
-        public override void Create(SqlConnection connection, BaseClass entity) { }
         public override void Update(SqlConnection connection)
         {
+            // update a record data of Nurse entity in the database
             int Id = Helper.AskUserForNumber(UserInputEnum.Id);
             string Name = Helper.AskUserForString(UserInputEnum.Name);
             string Department = Helper.AskUserForString(UserInputEnum.Department);

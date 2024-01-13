@@ -8,6 +8,7 @@ namespace ITI.HospitalConsoleApp
 {
     public enum EntitiesEnum
     {
+        // Enum refer to Etities in Database
         patients, consultants, nurses, drugs
     }
 }
