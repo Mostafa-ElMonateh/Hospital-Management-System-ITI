@@ -206,21 +206,21 @@ namespace ITI.HospitalConsoleApp
         public static void ChooseCrud(OperationsEnum opera, int option, SqlConnection connection)
         {
             // excute a crud depends on the user choice
-            BaseClass sara = ReturnObj(option);
-            if (sara is null)
+            BaseClass entity = ReturnObj(option);
+            if (entity is null)
                 OperationAsk(connection);
             else if (OperationsEnum.Update == opera)
-                sara.Update(connection);
+                entity.Update(connection);
             else if (OperationsEnum.Delete == opera)
-                sara.Delete(connection, sara);
+                entity.Delete(connection, entity);
             else if (OperationsEnum.Search == opera)
-                sara.Search(connection, sara);
+                entity.Search(connection, entity);
             else if (OperationsEnum.Add == opera)
-                sara.Add(connection, sara);
+                entity.Add(connection, entity);
             else if (OperationsEnum.Read == opera)
-                sara.Read(connection, sara);
+                entity.Read(connection, entity);
             else
-                sara.Delete(connection, sara);
+                entity.Delete(connection, entity);
         }
 
 
