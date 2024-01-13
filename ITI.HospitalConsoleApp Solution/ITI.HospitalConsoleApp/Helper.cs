@@ -165,7 +165,7 @@ namespace ITI.HospitalConsoleApp
                         AskForTableForOperation(OperationsEnum.Read);
                         Console.WriteLine();
                         Console.Write("Enter an Option: ");
-                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input < 5)
+                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
                             testSara(OperationsEnum.Read, input, connection);
                         else
                             Console.WriteLine("\nEnter a VALID option 👎\n");
@@ -178,7 +178,7 @@ namespace ITI.HospitalConsoleApp
                         Console.WriteLine();
                         Console.Write("Enter an Option: ");
 
-                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input < 5)
+                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
                             testSara(OperationsEnum.Update, input, connection);
                         else
                             Console.WriteLine("\nEnter a VALID option 👎\n");
@@ -192,7 +192,7 @@ namespace ITI.HospitalConsoleApp
                         Console.WriteLine();
                         Console.Write("Enter an Option: ");
 
-                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input < 5)
+                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
                             testSara(OperationsEnum.Delete, input, connection);
                         else
                             Console.WriteLine("\nEnter a VALID option 👎\n");
@@ -207,7 +207,7 @@ namespace ITI.HospitalConsoleApp
                         Console.WriteLine();
                         Console.Write("Enter an Option: ");
 
-                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input < 5)
+                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
                             testSara(OperationsEnum.Search, input, connection);
                         else
                             Console.WriteLine("\nEnter a VALID option 👎\n");
