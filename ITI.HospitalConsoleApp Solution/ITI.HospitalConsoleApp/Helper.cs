@@ -104,12 +104,6 @@ namespace ITI.HospitalConsoleApp
 
             }
 
-
-
-
-
-
-
             string UserInput;
 
             Console.Write(PrintMessage);
@@ -134,7 +128,17 @@ namespace ITI.HospitalConsoleApp
             Console.WriteLine($" 5) Back to the menu..");
         }
 
-
+        public static void ExecuteCruds(OperationsEnum operationName, SqlConnection connection)
+        {
+            AskForTableForOperation(operationName);
+            Console.WriteLine();
+            Console.Write("Enter an Option: ");
+            if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
+                testSara(operationName, input, connection);
+            else
+                Console.WriteLine("\nEnter a VALID option 👎\n");
+            OperationAsk(connection);
+        }
 
 
         // Operations List
@@ -161,65 +165,20 @@ namespace ITI.HospitalConsoleApp
                     }
                     break;
                 case 2:
-                    {
-                        AskForTableForOperation(OperationsEnum.Read);
-                        Console.WriteLine();
-                        Console.Write("Enter an Option: ");
-                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
-                            testSara(OperationsEnum.Read, input, connection);
-                        else
-                            Console.WriteLine("\nEnter a VALID option 👎\n");
-                        OperationAsk(connection);
-                    }
+                    ExecuteCruds(OperationsEnum.Read, connection);
                     break;
                 case 3:
-                    {
-                        AskForTableForOperation(OperationsEnum.Update);
-                        Console.WriteLine();
-                        Console.Write("Enter an Option: ");
-
-                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
-                            testSara(OperationsEnum.Update, input, connection);
-                        else
-                            Console.WriteLine("\nEnter a VALID option 👎\n");
-
-                        OperationAsk(connection);
-                    }
+                    ExecuteCruds(OperationsEnum.Update, connection);
                     break;
                 case 4:
-                    {
-                        AskForTableForOperation(OperationsEnum.Delete);
-                        Console.WriteLine();
-                        Console.Write("Enter an Option: ");
-
-                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
-                            testSara(OperationsEnum.Delete, input, connection);
-                        else
-                            Console.WriteLine("\nEnter a VALID option 👎\n");
-
-                        OperationAsk(connection);
-
-                    }
+                    ExecuteCruds(OperationsEnum.Delete, connection);
                     break;
                 case 5:
-                    {
-                        AskForTableForOperation(OperationsEnum.Search);
-                        Console.WriteLine();
-                        Console.Write("Enter an Option: ");
-
-                        if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
-                            testSara(OperationsEnum.Search, input, connection);
-                        else
-                            Console.WriteLine("\nEnter a VALID option 👎\n");
-
-                        OperationAsk(connection);
-                    }
+                    ExecuteCruds(OperationsEnum.Search, connection);
                     break;
                 case 6:
                     {
-                        Console.WriteLine("\n------------------");
-                        Console.WriteLine("Good Bye Ya Sara 👋");
-                        Console.WriteLine("------------------\n");
+                        Console.WriteLine("\n------------------\nGood Bye Ya Sara 👋\n------------------\n");
                         Environment.Exit(0);
                         break;
                     }
