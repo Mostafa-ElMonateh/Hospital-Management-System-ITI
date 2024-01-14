@@ -28,7 +28,8 @@ namespace ITI.HospitalConsoleApp
 
         public virtual void Update(SqlConnection connection) { }
 
-        public void Add(SqlConnection connection, BaseClass entity) {
+        public void Add(SqlConnection connection, BaseClass entity)
+        {
             // Add records to entities in the database
             string Name = entity.ToString() == "Drugs" ? Helper.AskUserForString(UserInputEnum.Brand) : Helper.AskUserForString(UserInputEnum.Name);
             SqlCommand command;
@@ -42,7 +43,7 @@ namespace ITI.HospitalConsoleApp
                 string DepartmentName = Helper.AskUserForString(UserInputEnum.Department);
                 command = new SqlCommand($"insert into {entity.ToString()} values('{Name}','{DepartmentName}')", connection);
             }
-            
+
             int rowsAffected = command.ExecuteNonQuery();
 
             if (rowsAffected > 0)
@@ -56,11 +57,14 @@ namespace ITI.HospitalConsoleApp
         public void Search(SqlConnection connection, BaseClass entity)
         {
             // Search by name for records of entities in the database
-            Console.WriteLine("\nSara Search by name ..");
-            Console.Write("Enter the name : ");
-            string input = Console.ReadLine();
-
             string nameColumn = entity.ToString() == "Drugs" ? "Brand" : "Name";
+            Console.WriteLine("\nSara Search by name ..");
+            Console.Write($"Enter the {nameColumn} : ");
+            ConsoleColor originalColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Green;
+            string input = Console.ReadLine();
+            Console.ForegroundColor = originalColor;
+
 
             string sqlQuery = $"select * from {entity.ToString()} where {nameColumn} = '{input}'";
 
@@ -75,7 +79,7 @@ namespace ITI.HospitalConsoleApp
 
 
         }
-        
+
 
         public void Delete(SqlConnection connection, BaseClass entity)
         {
@@ -85,7 +89,7 @@ namespace ITI.HospitalConsoleApp
             int Id = option == "Code" ? Helper.AskUserForNumber(UserInputEnum.Code) : Helper.AskUserForNumber(UserInputEnum.Id);
 
 
-            SqlCommand command = new SqlCommand($"delete from {entity.ToString()} where { option } = {Id}", connection);
+            SqlCommand command = new SqlCommand($"delete from {entity.ToString()} where {option} = {Id}", connection);
 
             int rowsAffected = command.ExecuteNonQuery();
 

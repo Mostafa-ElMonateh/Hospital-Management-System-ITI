@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ITI.HospitalConsoleApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32c1b92dea11a4687a5aad415fb425479dc7756a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8d8b29312e6be96fbf8c1ce175cb66428cefec4")]
 [assembly: System.Reflection.AssemblyProductAttribute("ITI.HospitalConsoleApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ITI.HospitalConsoleApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

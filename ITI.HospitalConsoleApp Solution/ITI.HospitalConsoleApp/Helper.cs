@@ -31,10 +31,18 @@ namespace ITI.HospitalConsoleApp
             do
             {
                 Console.WriteLine("\nEnter the User Name :)");
-                string user_name = Console.ReadLine();
-                Console.WriteLine("\nEnter Password :)");
 
+                ConsoleColor originalColor = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Green;
+
+                string user_name = Console.ReadLine();
+
+                Console.ForegroundColor = originalColor;
+
+                Console.WriteLine("\nEnter Password :)");
+                Console.ForegroundColor = ConsoleColor.Green;
                 flag = int.TryParse(Console.ReadLine(), out int password);
+                Console.ForegroundColor = originalColor;
                 if (flag && user_name == "sara" && password == 1592001)
                 {
                     Console.Clear();
@@ -44,7 +52,7 @@ namespace ITI.HospitalConsoleApp
                     is_enterded = true;
                 }
             } while (!is_enterded);
-        } 
+        }
         #endregion
 
         #region Handle the user options
@@ -77,10 +85,16 @@ namespace ITI.HospitalConsoleApp
             int UserInput;
 
             Console.Write(PrintMessage);
+            ConsoleColor originalColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Green;
             while (!int.TryParse(Console.ReadLine(), out UserInput) || UserInput <= 0)
             {
+                Console.ForegroundColor = originalColor;
                 Console.WriteLine(PrintErrorMessage);
+                Console.ForegroundColor = ConsoleColor.Green;
             }
+            Console.ForegroundColor = originalColor;
+
             return UserInput;
         }
 
@@ -110,12 +124,16 @@ namespace ITI.HospitalConsoleApp
             string UserInput;
 
             Console.Write(PrintMessage);
+            ConsoleColor originalColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Green;
             UserInput = Console.ReadLine();
-
+            Console.ForegroundColor = originalColor;
             while (UserInput is null)
             {
                 Console.WriteLine(PrintErrorMessage);
+                Console.ForegroundColor = ConsoleColor.Green;
                 UserInput = Console.ReadLine();
+                Console.ForegroundColor = originalColor;
             }
             return UserInput;
         }
@@ -140,10 +158,16 @@ namespace ITI.HospitalConsoleApp
             AskForTableForOperation(operationName);
             Console.WriteLine();
             Console.Write("Enter an Option: ");
+            ConsoleColor originalColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Green;
             if (int.TryParse(Console.ReadLine(), out int input) && input > 0 && input <= 5)
+            {
+                Console.ForegroundColor = originalColor;
                 ChooseCrud(operationName, input, connection);
+            }
             else
-                Console.WriteLine("\nEnter a VALID option 👎\n");
+            { Console.ForegroundColor = originalColor; Console.WriteLine("\nEnter a VALID option 👎\n"); }
+
             OperationAsk(connection);
         }
 
@@ -159,12 +183,11 @@ namespace ITI.HospitalConsoleApp
             Console.WriteLine($" 4) To Delete ( Patients - nurses - consultant - drug )");
             Console.WriteLine($" 5) To Search ( Patients - nurses - consultant - drug )");
             Console.WriteLine($" 6) To Exit..");
-
             Console.WriteLine("\nSara please choose an operation :)");
-
+            ConsoleColor originalColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Green;
             int.TryParse(Console.ReadLine(), out int UserOption);
-
-
+            Console.ForegroundColor = originalColor;
             switch (UserOption)
             {
                 case 1:
@@ -206,21 +229,21 @@ namespace ITI.HospitalConsoleApp
         public static void ChooseCrud(OperationsEnum opera, int option, SqlConnection connection)
         {
             // excute a crud depends on the user choice
-            BaseClass entity = ReturnObj(option);
-            if (entity is null)
+            BaseClass sara = ReturnObj(option);
+            if (sara is null)
                 OperationAsk(connection);
             else if (OperationsEnum.Update == opera)
-                entity.Update(connection);
+                sara.Update(connection);
             else if (OperationsEnum.Delete == opera)
-                entity.Delete(connection, entity);
+                sara.Delete(connection, sara);
             else if (OperationsEnum.Search == opera)
-                entity.Search(connection, entity);
+                sara.Search(connection, sara);
             else if (OperationsEnum.Add == opera)
-                entity.Add(connection, entity);
+                sara.Add(connection, sara);
             else if (OperationsEnum.Read == opera)
-                entity.Read(connection, entity);
+                sara.Read(connection, sara);
             else
-                entity.Delete(connection, entity);
+                sara.Delete(connection, sara);
         }
 
 
@@ -240,19 +263,19 @@ namespace ITI.HospitalConsoleApp
 
         public static void PrintDataTable(DataTable dataTable)
         {
-            // Print column headers
+
             foreach (DataColumn column in dataTable.Columns)
             {
-                Console.Write($"{column.ColumnName,-15}");
+                Console.Write($"{column.ColumnName,-20}");
             }
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
-            // Print rows
+
             foreach (DataRow row in dataTable.Rows)
             {
                 foreach (var item in row.ItemArray)
                 {
-                    Console.Write($"{item,-15}");
+                    Console.Write($"{item,-20}");
                 }
                 Console.WriteLine();
             }
