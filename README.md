@@ -38,6 +38,7 @@ The **Hospital Management System (HMS) Console Application** is a C# project des
 3. **Build and Run:**
 - Open the solution in Visual Studio or your preferred C# IDE.
 Build and run the console application.
+- Hint: username = sara, password = 1592001
 
 ## Usage
 
